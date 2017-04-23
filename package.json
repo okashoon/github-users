@@ -1,0 +1,15 @@
+{
+    "name": "instachallenge",
+    "version": "1.0.0",
+    "description": "angular 1.x app that has a list of users, that when clicked it shows details",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Ahmed Okasha",
+    "license": "ISC",
+    "dependencies": {
+        "angular": "^1.6.4"
+    },
+    "devDependencies": {}
+}
