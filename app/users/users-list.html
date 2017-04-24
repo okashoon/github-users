@@ -1,9 +1,13 @@
-<p>users list state</p>
+<div>
 
-<ul>
-    <li ng-repeat="user in vm.users | limitTo: vm.usersCount">
-        <a>{{user.login}}</a>
-    </li>
-</ul>
+    <ul>
+        <li ng-repeat="user in vm.users | limitTo: vm.usersCount">
+            <a ui-sref="users.details({userId : user.id})">{{user.login}}</a>
+        </li>
+    </ul>
 
-<button ng-click="vm.loadMoreUsers()">Load More</button>
+    <button ng-click="vm.loadMoreUsers()">Load More</button>
+
+</div>
+
+<ui-view></ui-view>

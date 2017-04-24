@@ -14,18 +14,34 @@ config(function($stateProvider) {
 
     var usersState = {
         name: 'users',
-        urls: '/users',
+        url: '/users',
         templateUrl: './users/users-list.html',
         controller: 'UsersListCtrl',
         controllerAs: 'vm',
         resolve: {
-            users: function(usersService) {
-                return usersService.getAllUsers();
+            users: function(UsersService) {
+                return UsersService.getAllUsers();
+            }
+        }
+    }
+
+    var userDetailsState = {
+        name: 'users.details',
+        url: '/{userId}',
+        templateUrl: './users/user-details.html',
+        controller: 'UserDetailsCtrl',
+        controllerAs: 'vm',
+        resolve: {
+            user: function(users, $stateParams) {
+                return users.data.find(function(user) {
+                    return user.id == $stateParams.userId;
+                })
             }
         }
     }
     $stateProvider.state(homeState);
     $stateProvider.state(aboutState);
     $stateProvider.state(usersState);
+    $stateProvider.state(userDetailsState);
 
 })

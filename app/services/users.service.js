@@ -1,5 +1,5 @@
-angular.module('usersService', [])
-    .factory('usersService', ['$http', function usersService($http) {
+angular.module('UsersService', [])
+    .factory('UsersService', ['$http', function UsersService($http) {
         var users = {};
         var userNo = 0;
         users.getAllUsers = function() {

@@ -1,7 +1,7 @@
-angular.module('usersListCtrl', []).
-controller('UsersListCtrl', ['users', 'usersService', UsersListCtrl])
+angular.module('UsersListCtrl', []).
+controller('UsersListCtrl', ['users', UsersListCtrl])
 
-function UsersListCtrl(users, usersService) {
+function UsersListCtrl(users) {
 
     this.users = users.data;
 

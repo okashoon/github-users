@@ -1,4 +1,4 @@
 angular.module('UserDetailsCtrl', []).
-controller('UserDetailsCtrl', function UserDetailsCtrl($scope) {
-    $scope.name = "ahmed";
+controller('UserDetailsCtrl', function UserDetailsCtrl(user) {
+    this.user = user;
 })
