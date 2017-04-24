@@ -1,0 +1,7 @@
+.menu>li {
+    display: inline;
+}
+
+.menu>li>a {
+    display: inline;
+}

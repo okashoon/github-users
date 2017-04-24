@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Github Users</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/app.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+
+    <script src="users/user-details.controller.js"></script>
+    <script src="users/users-list.controller.js"></script>
+    <script src="services/users.service.js"></script>
+
+    <script src="header/header.controller.js"></script>
+
+</head>
+
+<body ng-app="app">
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+
+            <h1 class="menu-text">Github users</h1>
+
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="users">Users</a></li>
+                <li><a ui-sref="about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <ui-view></ui-view>
+
+
+</body>
+
+</html>

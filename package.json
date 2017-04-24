@@ -1,15 +1,20 @@
 {
-    "name": "instachallenge",
-    "version": "1.0.0",
-    "description": "angular 1.x app that has a list of users, that when clicked it shows details",
-    "main": "index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Ahmed Okasha",
-    "license": "ISC",
-    "dependencies": {
-        "angular": "^1.6.4"
-    },
-    "devDependencies": {}
+  "name": "instachallenge",
+  "version": "1.0.0",
+  "description": "angular 1.x app that has a list of users, that when clicked it shows details",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmed Okasha",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^0.4.2",
+    "foundation": "^4.2.1-1",
+    "foundation-sites": "^6.3.1",
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^2.1.1"
+  },
+  "devDependencies": {}
 }
