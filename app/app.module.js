@@ -1,6 +1,6 @@
 angular.module('app', [
     'ui.router',
     'UserDetailsCtrl',
-    'UsersListCtrl',
+    'usersListCtrl',
     'usersService'
 ]);

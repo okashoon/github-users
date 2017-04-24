@@ -16,7 +16,13 @@ config(function($stateProvider) {
         name: 'users',
         urls: '/users',
         templateUrl: './users/users-list.html',
-        controller: 'UsersListCtrl'
+        controller: 'UsersListCtrl',
+        controllerAs: 'vm',
+        resolve: {
+            users: function(usersService) {
+                return usersService.getAllUsers();
+            }
+        }
     }
     $stateProvider.state(homeState);
     $stateProvider.state(aboutState);
