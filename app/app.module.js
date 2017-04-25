@@ -2,5 +2,6 @@ angular.module('app', [
     'ui.router',
     'UserDetailsCtrl',
     'UsersListCtrl',
-    'UsersService'
+    'UsersService',
+    'uiRouterStyles'
 ]);

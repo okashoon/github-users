@@ -6,6 +6,9 @@ angular.module('UsersService', [])
             return $http.get('https://api.github.com/users');
 
         };
+        users.getUserByLogin = function(login) {
+            return $http.get('https://api.github.com/users/' + login);
+        }
 
         return users;
     }]);

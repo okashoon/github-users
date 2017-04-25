@@ -18,6 +18,9 @@ config(function($stateProvider) {
         templateUrl: './users/users-list.html',
         controller: 'UsersListCtrl',
         controllerAs: 'vm',
+        data: {
+            css: ['./users/users-list.css']
+        },
         resolve: {
             users: function(UsersService) {
                 return UsersService.getAllUsers();
@@ -27,15 +30,13 @@ config(function($stateProvider) {
 
     var userDetailsState = {
         name: 'users.details',
-        url: '/{userId}',
+        url: '/{userLogin}',
         templateUrl: './users/user-details.html',
         controller: 'UserDetailsCtrl',
         controllerAs: 'vm',
         resolve: {
-            user: function(users, $stateParams) {
-                return users.data.find(function(user) {
-                    return user.id == $stateParams.userId;
-                })
+            user: function(UsersService, $stateParams) {
+                return UsersService.getUserByLogin($stateParams.userLogin);
             }
         }
     }

@@ -1,13 +1,20 @@
-<div>
+<div class="expanded row">
 
-    <ul>
-        <li ng-repeat="user in vm.users | limitTo: vm.usersCount">
-            <a ui-sref="users.details({userId : user.id})">{{user.login}}</a>
-        </li>
-    </ul>
+    <div class="columns small-3 large-2">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="user in vm.users | limitTo: vm.usersCount">
+                <a ui-sref="users.details({userLogin : user.login})" ui-sref-active="active">{{user.login}}</a>
+            </li>
 
-    <button ng-click="vm.loadMoreUsers()">Load More</button>
+        </ul>
+        <button class="expanded success button" ng-click="vm.loadMoreUsers()">Load More</button>
 
+    </div>
+
+    <div class="columns small-9 large-6 large-offset-1">
+        <ui-view></ui-view>
+    </div>
+    <div class="columns large-1">
+
+    </div>
 </div>
-
-<ui-view></ui-view>
