@@ -1,4 +1,9 @@
+(function(){
 angular.module('UserDetailsCtrl', []).
-controller('UserDetailsCtrl', function UserDetailsCtrl(user) {
+controller('UserDetailsCtrl', ['user',UserDetailsCtrl]);
+
+function UserDetailsCtrl(user) {
+    //user comes from resolve ui-router
     this.user = user.data;
-})
+}
+})()

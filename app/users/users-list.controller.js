@@ -1,31 +1,19 @@
-angular.module('UsersListCtrl', []).
-controller('UsersListCtrl', ['users','$state', UsersListCtrl])
+(function () {
+    angular.module('UsersListCtrl', []).
+        controller('UsersListCtrl', ['users', '$state', UsersListCtrl]);
 
-function UsersListCtrl(users,$state) {
+    function UsersListCtrl(users, $state) {
 
+        //users from resolve ui-router
+        this.users = users.data;
 
-    this.users = users.data;
+        //display first user details by default
+        $state.go("users.details", { userLogin: this.users[0].login });
 
-    $state.go("users.details",{userLogin: this.users[0].login});
-
-    this.usersCount = 5;
-    this.loadMoreUsers = function() {
-        this.usersCount += 5;
+        //to only display 5 users initially and add 5 when clicking load more
+        this.usersCount = 5;
+        this.loadMoreUsers = function () {
+            this.usersCount += 5;
+        }
     }
-
-    // usersService.getAllUsers().then(function(response) {
-    //     //users = response.data;
-    //     //console.log(response.data)
-    // })
-}
-
-
-
-// ['users', function UsersListCtrl(users) {
-
-//     console.log(users.data);
-//     // usersService.getAllUsers().then(function(response) {
-//     //     //users = response.data;
-//     //     //console.log(response.data)
-//     // })
-// }]
+})()
