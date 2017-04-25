@@ -1,9 +1,12 @@
 angular.module('UsersListCtrl', []).
-controller('UsersListCtrl', ['users', UsersListCtrl])
+controller('UsersListCtrl', ['users','$state', UsersListCtrl])
 
-function UsersListCtrl(users) {
+function UsersListCtrl(users,$state) {
+
 
     this.users = users.data;
+
+    $state.go("users.details",{userLogin: this.users[0].login});
 
     this.usersCount = 5;
     this.loadMoreUsers = function() {
