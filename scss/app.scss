@@ -80,6 +80,7 @@ $list-group-margin: $global-margin;
         color: $list-group-font-active-color;
         background-color: $list-group-active-background;
         border-color: $list-group-active-border;
+        
     }
     &:hover,
     &:focus {
@@ -90,9 +91,7 @@ $list-group-margin: $global-margin;
             background-color: $list-group-active-background;
         }
     }
-    &:hover a {
-        color: white;
-    }
+    
 }
 
 .container .row {
@@ -101,4 +100,14 @@ $list-group-margin: $global-margin;
     p {
         margin: 0;
     }
+}
+
+a.active{
+    background-color: $list-group-active-background;
+    color: white;
+}
+
+.menu-text{
+    font-size: 2em;
+    margin: 0;
 }

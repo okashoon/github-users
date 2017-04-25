@@ -2,8 +2,11 @@
 
     <div class="columns small-3 large-2">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="user in vm.users | limitTo: vm.usersCount">
-                <a ui-sref="users.details({userLogin : user.login})" ui-sref-active="active">{{user.login}}</a>
+            <li ui-sref="users.details({userLogin : user.login})" 
+                ui-sref-active="active" 
+                class="list-group-item" 
+                ng-repeat="user in vm.users | limitTo: vm.usersCount">
+                {{user.login}}
             </li>
 
         </ul>

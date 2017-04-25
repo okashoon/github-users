@@ -4988,14 +4988,21 @@ a.thumbnail image {
 .list-group-item:hover.active, .list-group-item:focus.active {
   background-color: #1779ba;
 }
-.list-group-item:hover a {
-  color: white;
-}
 
 .container .row {
   border-bottom: 1px solid grey;
   padding: 20px;
 }
 .container .row p {
+  margin: 0;
+}
+
+a.active {
+  background-color: #1779ba;
+  color: white;
+}
+
+.menu-text {
+  font-size: 2em;
   margin: 0;
 }
