@@ -12,6 +12,7 @@ describe('UsersListController', function () {
 
   
 
+//ToDo separate every test in separate it() block
 
   it('Users must load before controller instantiation', inject(function ($controller,users,$state) {
     //verify if go method is called by $state
@@ -19,8 +20,11 @@ describe('UsersListController', function () {
     expect($state.go).toBeDefined;
     var ctrl = $controller('UsersListCtrl',{$users:users,$state: $state})
 
+    //users instatiated
     expect(ctrl.users.length).toEqual(2);
     ctrl.loadMoreUsers();
+
+    //usersCount is incremented by 5
     expect(ctrl.usersCount).toEqual(10);
   }));
 

@@ -53,7 +53,8 @@ angular.module('app').
         $stateProvider.state(userDetailsState);
 
     }).run(function ($rootScope,$location){
-
+    
+    //ToDo redirect when url is wrong
     $rootScope.$on('$stateChangeError',
         function(event, current, previous, rejection) {
            console.log('err');
