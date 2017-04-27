@@ -4,4 +4,4 @@ angular.module('app', [
     'UsersListCtrl',
     'UsersService',
     'uiRouterStyles'
-]);
+])

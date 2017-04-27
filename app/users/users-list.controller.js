@@ -1,8 +1,12 @@
 (function () {
     angular.module('UsersListCtrl', []).
-        controller('UsersListCtrl', ['users', '$state', UsersListCtrl]);
+        controller('UsersListCtrl', UsersListCtrl);
+
+    UsersListCtrl.$inject = ['users', '$state'];
 
     function UsersListCtrl(users, $state) {
+
+        this.a = 3;
 
         //users from resolve ui-router
         this.users = users.data;

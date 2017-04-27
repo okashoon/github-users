@@ -1,3 +1,4 @@
+(function(){
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 
@@ -22,3 +23,4 @@ gulp.task('watch', function() {
     gulp.watch('scss/*.scss', ['process-styles'])
 
 })
+})();

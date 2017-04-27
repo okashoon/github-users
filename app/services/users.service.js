@@ -1,23 +1,23 @@
-(function(){
-angular.module('UsersService', [])
-    .factory('UsersService', ['$http', UsersService]);
+(function () {
+    angular.module('UsersService', [])
+        .factory('UsersService', UsersService);
 
-function UsersService($http) {
-    var users = {};
-    var userNo = 0;
+    UsersService.$inject= ['$http'];
 
-    users.getAllUsers = getAllUsers;
-    users.getUserByLogin = getUserByLogin;
+    function UsersService($http) {
+        var service = {
+            getAllUsers: getAllUsers,
+            getUserByLogin: getUserByLogin
+        };
 
+        return service;
 
-    function getAllUsers() {
-        return $http.get('https://api.github.com/users');
+        function getAllUsers() {
+            return $http.get('https://api.github.com/users');
+        };
 
-    };
-    function getUserByLogin(login) {
-        return $http.get('https://api.github.com/users/' + login);
+        function getUserByLogin(login) {
+            return $http.get('https://api.github.com/users/' + login);
+        };
     }
-
-    return users;
-}
 })()
