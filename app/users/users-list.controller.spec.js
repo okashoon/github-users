@@ -1,32 +1,42 @@
 
 
 describe('UsersListController', function () {
-  var controller;
-  
+  var $state, users, ctrl;
+
 
   beforeEach(module('ui.router'));
   beforeEach(module('UsersListCtrl'));
-  beforeEach(module(function($provide){
-    $provide.value('users',{data:[{name:"ahmed"},{name:"wael"}]});
+  beforeEach(module(function ($provide) {
+    //mock users
+    $provide.value('users', { data: [{ name: "ahmed" }, { name: "wael" }] });
   }));
 
-  
+  beforeEach(inject(function ($state, $controller) {
+    //mock $state
+    $state = {
+      go: function () {
+        return true;
+      }
+    }
 
-//ToDo separate every test in separate it() block
+    //instatiate controller with mock users and mock $state
+    ctrl = $controller('UsersListCtrl', { $users: users, $state: $state })
 
-  it('Users must load before controller instantiation', inject(function ($controller,users,$state) {
-    //verify if go method is called by $state
-    spyOn($state, 'go');
-    expect($state.go).toBeDefined;
-    var ctrl = $controller('UsersListCtrl',{$users:users,$state: $state})
+  }))
 
-    //users instatiated
+
+  it('Users must load before controller instantiation', function () {
+
     expect(ctrl.users.length).toEqual(2);
-    ctrl.loadMoreUsers();
 
-    //usersCount is incremented by 5
+  });
+
+  it('loadMoreUsers increment usersCount by 5', function () {
+
+    ctrl.loadMoreUsers();
     expect(ctrl.usersCount).toEqual(10);
-  }));
+
+  })
 
 
 

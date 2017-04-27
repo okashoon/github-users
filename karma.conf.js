@@ -17,8 +17,6 @@ module.exports = function (config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-ui-router/release/angular-ui-router.js',
-      
-      'node_modules/angular/angular-resource.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'app/app.module.js',
       'app/app.config.js',
@@ -26,7 +24,6 @@ module.exports = function (config) {
       'app/users/users-list.controller.js',
       'app/services/users.service.js',
       'app/header/header.controller.js',
-      '*.spec.js',
       'app/**/*.spec.js'      
     ],
 
