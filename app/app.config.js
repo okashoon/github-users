@@ -3,13 +3,13 @@ angular.module('app').
         var homeState = {
             name: 'home',
             url: '/home',
-            template: '<b>{{name}}</b>'
+            template: '<h1>Home Page</h1>'
 
         };
         var aboutState = {
             name: 'about',
             url: '/about',
-            template: '<p>about state</p>'
+            template: '<h1>about Page</h1>'
         };
 
         var usersState = {
